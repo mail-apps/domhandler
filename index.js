@@ -39,7 +39,9 @@ DomHandler.prototype.onreset = function(){
 
 //Signals the handler that parsing is done
 DomHandler.prototype.onend = function(){
-	if(this._done) return;
+	if(this._done) {
+		return;
+	}
 	this._done = true;
 	this._parser = null;
 	this._handleCallback(null);
@@ -47,20 +49,20 @@ DomHandler.prototype.onend = function(){
 
 DomHandler.prototype._handleCallback =
 DomHandler.prototype.onerror = function(error){
-	if(typeof this._callback === "function"){
+	if(typeof this._callback === "function") {
 		this._callback(error, this.dom);
 	} else {
-		if(error) throw error;
+		if(error) { throw error; }
 	}
 };
 
 DomHandler.prototype.onclosetag = function(){
 	//if(this._tagStack.pop().name !== name) this._handleCallback(Error("Tagname didn't match!"));
 	var elem = this._tagStack.pop();
-	if(this._elementCB) this._elementCB(elem);
+	if(this._elementCB) { this._elementCB(elem); }
 };
 
-DomHandler.prototype._addDomElement = function(element){
+DomHandler.prototype._addDomElement = function(element) {
 	var parent = this._tagStack[this._tagStack.length - 1];
 	var siblings = parent ? parent.children : this.dom;
 	var previousSibling = siblings[siblings.length - 1];
@@ -99,7 +101,7 @@ DomHandler.prototype.onopentag = function(name, attribs){
 	this._tagStack.push(element);
 };
 
-DomHandler.prototype.ontext = function(data){
+DomHandler.prototype.ontext = function(data) {
 	//the ignoreWhitespace is officially dropped, but for now,
 	//it's an alias for normalizeWhitespace
 	var normalize = this._options.normalizeWhitespace || this._options.ignoreWhitespace;
