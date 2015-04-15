@@ -3,7 +3,7 @@ var fs = require("fs"),
     assert = require("assert"),
     util = require("util"),
     Parser = require("htmlparser2").Parser,
-    Handler = require("../");
+    Handler = require("../lib/");
 
 var basePath = path.resolve(__dirname, "cases"),
     inspectOpts = { showHidden: true, depth: null };
@@ -22,7 +22,7 @@ fs
 		var handler = new Handler(function(err, actual){
 			assert.ifError(err);
 			try {
-				compare(expected, actual);
+				compare(expected, actual.dom);
 			} catch(e){
 				e.expected = util.inspect(expected, inspectOpts);
 				e.actual   = util.inspect(actual,   inspectOpts);

@@ -1,14 +1,13 @@
 {
   "name": "XML Namespace",
   "options": {},
-  "html": "<ns:tag xmlns:ns=\"hello\">text</ns:tag>",
+  "html": "<tag xmlns=\"hello\">text</tag>",
   "expected": [
     {
       "type": "tag",
       "name": "tag",
       "attribs": {},
       "ns": {
-        "prefix": "ns",
         "href": "hello"
       },
       "children": [
