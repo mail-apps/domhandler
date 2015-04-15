@@ -2,7 +2,7 @@
   "name": "domhandler",
   "version": "2.3.0",
   "description": "handler for htmlparser2 that turns pages into a dom",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "tests"
   },
