@@ -42,7 +42,6 @@ describe('xml namespace', function() {
     var node1 = getElement(root.children);
     assert.ok(!node1.defaultNS);
     assert.equal(node1.ns.href, 'namespace1');
-    assert.equal(node1.doc, document);
 
     var node2 = getElement(node1.children);
     assert.ok(!node2.defaultNS);

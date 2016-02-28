@@ -27,17 +27,5 @@
     "gulp-mocha": "^2.0.1",
     "htmlparser2": "3.8"
   },
-  "author": "Felix Boehm <me@feedic.com>",
-  "license": "BSD-2-Clause",
-  "jshintConfig": {
-    "quotmark": "double",
-    "trailing": true,
-    "unused": true,
-    "undef": true,
-    "node": true,
-    "proto": true,
-    "globals": {
-      "it": true
-    }
-  }
+  "author": "Felix Boehm <me@feedic.com>"
 }
